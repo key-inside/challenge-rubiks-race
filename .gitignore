@@ -1,0 +1,21 @@
+# OSX
+.DS_Store
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+build/
+rubiks-race
+
+# Test binary, build with `go test -c`
+*.test
+
+# Go module
+vendor/
+
+# Logs
+*.log
