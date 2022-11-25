@@ -8,7 +8,7 @@ PLUGIN_NAME ?= meow
 build:
 	go build -o build/$(APP_NAME) -ldflags "-s -w"
 
-## build: Builds the package
+## build-plugin: Builds the plugin package
 build-plugin:
 	go build -o build/plugins/$(PLUGIN_NAME).so -ldflags "-s -w" -buildmode=plugin "rubiks-race/plugins/$(PLUGIN_NAME)"
 
