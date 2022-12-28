@@ -115,13 +115,12 @@ func (g *Game) race() {
 			g.status = Complete
 			log.Printf("COMPLETE: Try Count = %d, Elapsed Time = %s", g.try, time.Since(g.startTime).String())
 		} else {
-			if g.try == 0 {
-				g.racer.Init(g.puzzle.Cubes(), g.puzzle.Goal())
-			}
-			g.try++
-
 			res := make(chan int, 1)
 			go func() {
+				if g.try == 0 {
+					g.racer.Init(g.puzzle.Cubes(), g.puzzle.Goal())
+				}
+				g.try++
 				res <- g.racer.Next(g.try)
 			}()
 
